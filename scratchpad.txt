@@ -1,0 +1,21 @@
+updated 7-16-2020
+
+At some point in the course you may end up getting Warning: Each child in a list should have a unique "key" prop even after we add a key prop in the "Fixing a Few Warnings" lecture. To ensure that this is not an issue, we should add a type parameter to our axios config object to only search for videos and not playlists.
+
+Update apis/youtube.js to add the type property:
+
+    export default axios.create({
+        baseURL: 'https://www.googleapis.com/youtube/v3',
+        params: {
+          part: 'snippet', 
+          type: 'video',
+          maxResults: 5,
+          key: KEY
+      }
+    });
+
+    🔗  Linked to alexsacchetti/videos-hooks (created .vercel and added it to .gitignore)
+🔍  Inspect: https://vercel.com/alexsacchetti/videos-hooks/84Jizb3SsuiVYLGsreXVvvWHEkZP [1s]
+✅  Production: https://videos-hooks-two-bice.vercel.app [58s]
+📝  Deployed to production. Run `vercel --prod` to overwrite later (https://vercel.link/2F).
+💡  To change the domain or build command, go to https://vercel.com/alexsacchetti/videos-hooks/settings
